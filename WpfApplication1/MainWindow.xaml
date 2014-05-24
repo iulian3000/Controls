@@ -3,5 +3,6 @@
         Title="MainWindow" Width="525" Height="350">
   <Canvas>
     <controls:NumericUpDown Width="137" />
+    <controls:RegexBox Canvas.Top="100" Width="168" />
   </Canvas>
 </Window>

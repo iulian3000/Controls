@@ -94,9 +94,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Z:\ion\ion.Controls\ion.Controls.csproj">
+    <ProjectReference Include="..\ion.Controls\ion.Controls.csproj">
       <Project>{7037291c-41df-4d01-9604-64e8b6e3c4b0}</Project>
       <Name>ion.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ion.Tools\ion.Tools.csproj">
+      <Project>{ed26e8d4-d775-45cc-92cc-ab289896ac4d}</Project>
+      <Name>ion.Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
