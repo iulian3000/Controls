@@ -16,21 +16,21 @@ namespace Ion.Controls
         public static readonly DependencyProperty RegexStringProperty =
             DependencyProperty.Register("RegexString", typeof(string), typeof(RegexBox), new PropertyMetadata("[^/]"));
 
-        [Category("MySettings")]
         /// <summary>
         /// Enalbles or Disables Space key, default false
         /// </summary>
+        [Category("MySettings")]
         public bool AllowSpace
         {
             get { return (bool)GetValue(AllowSpaceProperty); }
             set { SetValue(AllowSpaceProperty, value); }
         }
 
-        [Category("MySettings")]
         /// <summary>
         /// [^/] =&gt; all characters ^(\-)?[0-9]{0,}?$ =&gt; integer ^(\-?[0-9]{0,})(\.[0-9]{0,})?$
         /// =&gt; double
         /// </summary>
+        [Category("MySettings")]
         public string RegexString
         {
             get { return (string)GetValue(RegexStringProperty); }

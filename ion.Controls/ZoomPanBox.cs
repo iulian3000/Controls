@@ -21,6 +21,7 @@ namespace Ion.Controls
         static ZoomPanBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ZoomPanBox), new FrameworkPropertyMetadata(typeof(ZoomPanBox)));
+
             //WidthProperty.OverrideMetadata(typeof(ZoomPanBox), new FrameworkPropertyMetadata(150d));
             //HeightProperty.OverrideMetadata(typeof(ZoomPanBox), new FrameworkPropertyMetadata(150d));
         }
@@ -108,8 +109,10 @@ namespace Ion.Controls
         #region DP
 
         public static readonly DependencyProperty ImagineProperty =
-            DependencyProperty.Register("Imagine",
-            typeof(ImageSource), typeof(ZoomPanBox),
+            DependencyProperty.Register(
+            "Imagine",
+            typeof(ImageSource), 
+            typeof(ZoomPanBox),
             new PropertyMetadata(null));
 
         public ImageSource Imagine
