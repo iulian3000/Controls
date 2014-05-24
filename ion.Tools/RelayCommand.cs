@@ -1,35 +1,39 @@
-﻿using System;
-using System.Diagnostics;
-using System.Windows.Input;
-
-namespace ion.Tools
+﻿namespace Ion.Tools
 {
+    using System;
+    using System.Diagnostics;
+    using System.Windows.Input;
+
     /// <summary>
-    /// A command whose sole purpose is to
-    /// relay its functionality to other
-    /// objects by invoking delegates. The
-    /// default return value for the CanExecute
-    /// method is 'true'.
+    /// A command whose sole purpose is to relay its functionality to other objects by invoking
+    /// delegates. The default return value for the CanExecute method is 'true'.
     /// </summary>
     public class RelayCommand : ICommand
     {
+        /// <summary>
+        /// canExecute bool delegate
+        /// </summary>
         private readonly Func<bool> _canExecute;
+
+        /// <summary>
+        /// execute void delegate
+        /// </summary>
         private readonly Action _execute;
 
         /// <summary>
-        /// Creates a new command that can always execute.
+        /// Initializes a new instance of the <see cref="RelayCommand" /> class.
         /// </summary>
-        /// <param name="execute">The execution logic.</param>
+        /// <param name="execute"> The execution logic. </param>
         public RelayCommand(Action execute)
             : this(execute, null)
         {
         }
 
         /// <summary>
-        /// Creates a new command.
+        /// Initializes a new instance of the <see cref="RelayCommand"/> class
         /// </summary>
-        /// <param name="execute">The execution logic.</param>
-        /// <param name="canExecute">The execution status logic.</param>
+        /// <param name="execute">    The execution logic. </param>
+        /// <param name="canExecute"> The execution status logic. </param>
         public RelayCommand(Action execute, Func<bool> canExecute)
         {
             if (execute == null)
@@ -39,6 +43,9 @@ namespace ion.Tools
             _canExecute = canExecute;
         }
 
+        /// <summary>
+        /// Property
+        /// </summary>
         public event EventHandler CanExecuteChanged
         {
             add
@@ -53,6 +60,12 @@ namespace ion.Tools
             }
         }
 
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         [DebuggerStepThrough]
         public bool CanExecute(object parameter)
         {
@@ -66,11 +79,8 @@ namespace ion.Tools
     }
 
     /// <summary>
-    /// A command whose sole purpose is to
-    /// relay its functionality to other
-    /// objects by invoking delegates. The
-    /// default return value for the CanExecute
-    /// method is 'true'.
+    /// A command whose sole purpose is to relay its functionality to other objects by invoking
+    /// delegates. The default return value for the CanExecute method is 'true'.
     /// </summary>
     public class RelayCommand<T> : ICommand
     {
@@ -85,8 +95,8 @@ namespace ion.Tools
         /// <summary>
         /// Creates a new command.
         /// </summary>
-        /// <param name="execute">The execution logic.</param>
-        /// <param name="canExecute">The execution status logic.</param>
+        /// <param name="execute">    The execution logic. </param>
+        /// <param name="canExecute"> The execution status logic. </param>
         public RelayCommand(Action<T> execute, Predicate<T> canExecute)
         {
             if (execute == null)
@@ -113,12 +123,12 @@ namespace ion.Tools
         [DebuggerStepThrough]
         public bool CanExecute(object parameter)
         {
-            return _canExecute == null ? true : _canExecute((T)parameter);
+            return this._canExecute == null ? true : this._canExecute((T)parameter);
         }
 
         public void Execute(object parameter)
         {
-            _execute((T)parameter);
+            this._execute((T)parameter);
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace ion.Controls
+namespace Ion.Controls
 {
     public class RegexBox : TextBox
     {

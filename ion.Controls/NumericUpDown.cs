@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 
-namespace ion.Controls
+namespace Ion.Controls
 {
     public class DoubleToStringConverter : IValueConverter
     {

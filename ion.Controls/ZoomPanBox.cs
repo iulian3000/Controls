@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace ion.Controls
+namespace Ion.Controls
 {
     [TemplatePart(Name = "PART_border", Type = typeof(Border))]
     [TemplatePart(Name = "PART_image", Type = typeof(Image))]

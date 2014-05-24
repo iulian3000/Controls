@@ -7,8 +7,8 @@
     <ProjectGuid>{7037291C-41DF-4D01-9604-64E8B6E3C4B0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ion.Controls</RootNamespace>
-    <AssemblyName>ion.Controls</AssemblyName>
+    <RootNamespace>Ion.Controls</RootNamespace>
+    <AssemblyName>Ion.Controls</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

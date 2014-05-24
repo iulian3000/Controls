@@ -1,23 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ion.Tools
+﻿namespace Ion.Tools
 {
-    //[DebuggerStepThrough]
+    using System.ComponentModel;
+    using System.Diagnostics;
+    using System.Runtime.CompilerServices;
+
+    [DebuggerStepThrough]
+
+    /// <summary>
+    /// Base class with INotifyPropertyChanged interface
+    /// </summary>
     public class Inpc : INotifyPropertyChanged
     {
-
+        /// <summary>
+        /// PropertyChanged event handler
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Raises the PropertyChanged event
+        /// </summary>
+        /// <param name="propertyName"> The name of the property </param>
         public void RaisePropertyChanged([CallerMemberName]string propertyName = "")
         {
-            var evt = PropertyChanged;
+            var evt = this.PropertyChanged;
             if (evt != null)
             {
                 evt(this, new PropertyChangedEventArgs(propertyName));

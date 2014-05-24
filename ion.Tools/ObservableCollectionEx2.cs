@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ion.Tools
+﻿namespace Ion.Tools
 {
+    using System.Collections.Specialized;
+    using System.ComponentModel;
+
     /// <summary>
-    /// Extended ObservableCollection
-    /// AddOrReplaceExistent item method
-    /// Notify collection changed on any item who raises INotifyPropertyChanged
+    /// Extended ObservableCollection AddOrReplaceExistent item method Notify collection changed on
+    /// any item who raises INotifyPropertyChanged
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T"> typeof collection </typeparam>
     public class ObservableCollectionEx2<T> : ObservableCollectionEx<T> where T : INotifyPropertyChanged
     {
+        /// <summary>
+        /// OnCollectionChanged overriden method
+        /// </summary>
+        /// <param name="e"> NotifyCollectionChangedEventArgs </param>
         protected override void OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             base.OnCollectionChanged(e);
@@ -25,7 +22,7 @@ namespace ion.Tools
             {
                 foreach (INotifyPropertyChanged item in e.OldItems)
                 {
-                    item.PropertyChanged -= item_PropertyChanged;
+                    item.PropertyChanged -= Item_PropertyChanged;
                 }
             }
 
@@ -33,16 +30,20 @@ namespace ion.Tools
             {
                 foreach (INotifyPropertyChanged item in e.NewItems)
                 {
-                    item.PropertyChanged += item_PropertyChanged;
+                    item.PropertyChanged += Item_PropertyChanged;
                 }
             }
         }
 
-        void item_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        /// <summary>
+        /// item changed void method
+        /// </summary>
+        /// <param name="sender"> The sender </param>
+        /// <param name="e">      PropertyChangedEventArgs </param>
+        private void Item_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             NotifyCollectionChangedEventArgs args = new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset);
             OnCollectionChanged(args);
         }
-
     }
 }

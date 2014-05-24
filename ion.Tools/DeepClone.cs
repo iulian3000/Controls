@@ -1,17 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
-
-namespace ion.Tools
+﻿namespace Ion.Tools
 {
+    using System;
+    using System.IO;
+    using System.Runtime.Serialization;
+    using System.Runtime.Serialization.Formatters.Binary;
+
+    /// <summary>
+    /// Creates a deep clone of an object
+    /// </summary>
     public class DeepClone
     {
+        /// <summary>
+        /// Clones object
+        /// </summary>
+        /// <typeparam name="T"> typeof the object </typeparam>
+        /// <param name="objectToClone"> The object to clone </param>
+        /// <returns> Return result as T </returns>
         public static T Object<T>(T objectToClone)
         {
             if (objectToClone == null)

@@ -7,8 +7,8 @@
     <ProjectGuid>{ED26E8D4-D775-45CC-92CC-AB289896AC4D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ion.Tools</RootNamespace>
-    <AssemblyName>ion.Tools</AssemblyName>
+    <RootNamespace>Ion.Tools</RootNamespace>
+    <AssemblyName>Ion.Tools</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

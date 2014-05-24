@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:ion.Controls"
+                    xmlns:local="clr-namespace:Ion.Controls"
                     xmlns:bs="clr-namespace:System.Windows.Media;assembly=PresentationCore"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
