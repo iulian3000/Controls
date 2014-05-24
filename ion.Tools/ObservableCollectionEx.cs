@@ -1,6 +1,7 @@
 ﻿namespace Ion.Tools
 {
     using System.Collections.ObjectModel;
+    using System.Linq;
 
     /// <summary>
     /// Extended ObservableCollection AddOrReplaceExistent item method
@@ -15,7 +16,10 @@
         public void AddOrReplaceExistent(T item)
         {
             if (this.Items.Contains(item))
-                this.Items.Remove(item);
+            {
+                var index = this.Items.IndexOf(item);
+                this.Items[index] = item;
+            }
             else
                 this.Items.Add(item);
         }

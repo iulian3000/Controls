@@ -14,7 +14,7 @@
         /// Clones object
         /// </summary>
         /// <typeparam name="T"> typeof the object </typeparam>
-        /// <param name="objectToClone"> The object to clone </param>
+        /// <param name="objectToClone"> The object to cloned </param>
         /// <returns> Return result as T </returns>
         public static T Object<T>(T objectToClone)
         {
